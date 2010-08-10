@@ -1,0 +1,7 @@
+This is SynthBox, an Archiso project that will (someday) build an .iso image that can be written to a thumb drive or CD, which should (ideally) boot into a 
+live audio performance environment, showcasing some of th ebetter Linux audio synths and other tools.  My own tastes will most likely dictate what all is 
+included, but suggestions are welcome.
+
+All the code I've written is licensed under the GPLv2.  There are some files in here that came from other projects, which are all also under 
+redistributable license.  I haven't yet taken note of the licenses of all such files;  If you're an author of one of those files, please let me know so I can 
+get my attributions straight.  (This is my first open-source project, so please go easy on me with regard to licenses.)
