@@ -1,1 +1,5 @@
+#!/bin/bash
+
+#Add the user to the live image, so they can be logged in.
+
 useradd -u 1000 -g users -G storage,floppy,optical,audio,video,network,games,wheel,disk -d /home/synth synth

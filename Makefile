@@ -1,3 +1,6 @@
+# Makefile for SynthBox;  Based on the default Archiso makefile listed
+# on the Arch Wiki.
+
 #### Change these settings to modify how this ISO is built.
 #  The directory that you'll be using for the actual build process.
 WORKDIR=work
@@ -6,7 +9,7 @@ PACKAGES="$(shell cat packages.list) syslinux"
 # The name of our ISO. Does not specify the architecture!
 NAME=synthbox
 # Version will be appended to the ISO.
-VER=1.00
+VER=2010.8
 # Kernel version. You'll need this.
 KVER=2.6.33-ARCH
 # Architecture will also be appended to the ISO name.
