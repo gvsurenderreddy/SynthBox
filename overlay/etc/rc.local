@@ -1,0 +1,1 @@
+useradd -u 1000 -g users -G storage,floppy,optical,audio,video,network,games,wheel,disk -d /home/synth synth

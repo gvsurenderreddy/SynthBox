@@ -1,0 +1,6 @@
+#
+# /etc/hosts.allow
+#
+sshd: LOCAL
+
+# End of file
