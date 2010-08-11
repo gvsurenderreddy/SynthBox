@@ -5,7 +5,7 @@
 #  The directory that you'll be using for the actual build process.
 WORKDIR=work
 #  A list of packages to install, either space separated in a string or line separated in a file. Can include groups.
-PACKAGES="$(shell cat packages.list) syslinux"
+PACKAGES="$(shell cat packages.list.arch packages.list.oao) syslinux"
 # The name of our ISO. Does not specify the architecture!
 NAME=synthbox
 # Version will be appended to the ISO.

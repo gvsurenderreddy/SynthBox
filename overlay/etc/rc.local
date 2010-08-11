@@ -1,5 +1,11 @@
 #!/bin/bash
 
-#Add the user to the live image, so they can be logged in.
+#Set up the live environment.
 
-useradd -u 1000 -g users -G storage,floppy,optical,audio,video,network,games,wheel,disk -d /home/synth synth
+chmod 0440 /etc/sudoers &> /dev/null
+mkdir -p /home/synth &> /dev/null
+useradd -u 1000 -g users -G storage,optical,audio,video,network,wheel,power,hal,lp -d /home/synth synth &> /dev/null
+passwd -d synth &> /dev/null
+chown synth /home/synth &> /dev/null
+su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/synth/" synth &> /dev/null
+clear
