@@ -17,7 +17,7 @@ ARCH?=$(shell uname -m)
 # Current working directory
 PWD:=$(shell pwd)
 # This is going to be the full name the final iso/img will carry
-FULLNAME="$(PWD)"/$(NAME)-$(VER)-$(ARCH)
+FULLNAME="$(PWD)/$(NAME)-$(VER)-$(ARCH)"
 
 # Default make instruction to build everything.
 all: "$(NAME)"
@@ -54,7 +54,7 @@ overlay:
 	cp -r overlay "$(WORKDIR)"/
 	chown -R root:root "$(WORKDIR)"/overlay/etc
 	chmod -R go-w "$(WORKDIR)"/overlay/etc
-	wget -O "$(WORKDIR)"/overlay/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/$(ARCH)/all/
+	wget -O "$(WORKDIR)"/overlay/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/all/
 	sed -i "s/#Server/Server/g" "$(WORKDIR)"/overlay/etc/pacman.d/mirrorlist
 
 # Rule to process isomounts file.
@@ -64,13 +64,13 @@ iso-mounts: "$(WORKDIR)"/isomounts
 
 # This routine is always executed just before generating the actual image. 
 syslinux: root-image
-	mkdir -p $(WORKDIR)/iso/boot/isolinux
-	cp $(WORKDIR)/root-image/usr/lib/syslinux/*.c32 $(WORKDIR)/iso/boot/isolinux/
-	cp $(WORKDIR)/root-image/usr/lib/syslinux/isolinux.bin $(WORKDIR)/iso/boot/isolinux/
+	mkdir -p $(WORKDIR)/iso/boot/syslinux
+	cp $(WORKDIR)/root-image/usr/lib/syslinux/*.c32 $(WORKDIR)/iso/boot/syslinux/
+	cp $(WORKDIR)/root-image/usr/lib/syslinux/isolinux.bin $(WORKDIR)/iso/boot/syslinux/
 
 # In case "make clean" is called, the following routine gets rid of all files created by this Makefile.
 clean:
-	rm -rf "$(WORKDIR)" "$(FULLNAME)".img "$(FULLNAME)".iso
+	rm -rf "$(WORKDIR)" "$(FULLNAME).img" "$(FULLNAME).iso"
 
 .PHONY: all "$(NAME)"
 .PHONY: base-fs
