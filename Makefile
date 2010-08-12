@@ -11,7 +11,7 @@ NAME=synthbox
 # Version will be appended to the ISO.
 VER=2010.8
 # Kernel version. You'll need this.
-KVER=2.6.33-ARCH
+KVER=2.6.34-ARCH
 # Architecture will also be appended to the ISO name.
 ARCH?=$(shell uname -m)
 # Current working directory
@@ -54,6 +54,7 @@ overlay:
 	cp -r overlay "$(WORKDIR)"/
 	chown -R root:root "$(WORKDIR)"/overlay/etc
 	chmod -R go-w "$(WORKDIR)"/overlay/etc
+	chmod a+x "$(WORKDIR)"/overlay/etc/rc.local
 	wget -O "$(WORKDIR)"/overlay/etc/pacman.d/mirrorlist http://www.archlinux.org/mirrorlist/all/
 	sed -i "s/#Server/Server/g" "$(WORKDIR)"/overlay/etc/pacman.d/mirrorlist
 
