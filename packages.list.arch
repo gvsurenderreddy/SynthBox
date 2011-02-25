@@ -19,10 +19,8 @@ hal
 xorg
 xorg-video-drivers
 awesome
-cmt
 gtk-engine-murrine
 gtk-theme-switch2
-swh-plugins
 alsa-utils
 moc
 murrine-themes-collection
@@ -36,3 +34,4 @@ tango-icon-theme
 tango-icon-theme-extras
 ttf-liberation
 rsnapshot
+hydrogen
