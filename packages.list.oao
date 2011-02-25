@@ -1,13 +1,10 @@
 mingetty
 jack2-dbus-svn
 a2jmidid
-jconvolver
-jcgui
 obsoleteaudio/ladspa-plugins
 obsoleteaudio/lv2-plugins
 calf-git
 jamin
-gcdmaster
 gtk-clearlooks-zenburn
 ladish
 laditools
@@ -15,6 +12,5 @@ lash
 lv2core
 murrine-themes-collection
 non-sequencer-git
-rev-plugins
-slv2
+slv2-svn
 bristol

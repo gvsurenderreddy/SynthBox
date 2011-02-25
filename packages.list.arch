@@ -14,7 +14,6 @@ nano
 openssh
 rxvt-unicode
 dbus
-celt
 hal
 xorg
 xorg-video-drivers
@@ -33,4 +32,3 @@ tango-icon-theme
 tango-icon-theme-extras
 ttf-liberation
 rsnapshot
-hydrogen
