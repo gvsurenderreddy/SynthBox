@@ -3,8 +3,8 @@ jack2-dbus-svn
 a2jmidid
 jconvolver
 jcgui
-ladspa-plugins
-lv2-plugins
+obsoleteaudio/ladspa-plugins
+obsoleteaudio/lv2-plugins
 calf-git
 jamin
 gcdmaster
@@ -12,11 +12,9 @@ gtk-clearlooks-zenburn
 ladish
 laditools
 lash
-lv2
-lv2fil
-mda-lv2-svn
+lv2core
+murrine-themes-collection
 non-sequencer-git
 rev-plugins
 slv2
 bristol
-linuxwacom
