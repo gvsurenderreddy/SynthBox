@@ -4,6 +4,9 @@
 #### Change these settings to modify how this ISO is built.
 #  The directory that you'll be using for the actual build process.
 WORKDIR=work
+# INSTALL_DIR -> max 8 chars.
+INSTALL_DIR=mydir
+COMPRESS=gzip
 #  A list of packages to install, either space separated in a string or line separated in a file. Can include groups.
 PACKAGES="$(shell cat packages.list.arch packages.list.oao) syslinux"
 # The name of our ISO. Does not specify the architecture!
@@ -11,7 +14,7 @@ NAME=synthbox
 # Version will be appended to the ISO.
 VER=2010.8
 # Kernel version. You'll need this.
-KVER=2.6.34-ARCH
+kver_FILE=$(WORKDIR)/root-image/etc/mkinitcpio.d/kernel26.kver
 # Architecture will also be appended to the ISO name.
 ARCH?=$(shell uname -m)
 # Current working directory
@@ -24,7 +27,7 @@ all: "$(NAME)"
 
 # The following will first run the base-fs routine before creating the final iso image.
 "$(NAME)": base-fs
-	mkarchiso -p syslinux iso "$(WORKDIR)" "$(FULLNAME)".iso
+	mkarchiso -D $(INSTALL_DIR) -c $(COMPRESS) -p syslinux iso "$(WORKDIR)" "$(FULLNAME)".iso
 
 # This is the main rule for make the working filesystem. It will run routines from left to right. 
 # Thus, root-image is called first and syslinux is called last.
@@ -35,7 +38,7 @@ base-fs: root-image boot-files initcpio overlay iso-mounts syslinux
 root-image: "$(WORKDIR)"/root-image/.arch-chroot
 "$(WORKDIR)"/root-image/.arch-chroot:
 root-image:
-	mkarchiso -p $(PACKAGES) create "$(WORKDIR)"
+	mkarchiso -D $(INSTALL_DIR) -c $(COMPRESS) -p $(PACKAGES) create "$(WORKDIR)"
 
 # Rule for make /boot
 boot-files: root-image
@@ -43,10 +46,10 @@ boot-files: root-image
 	cp -r boot-files/* "$(WORKDIR)"/iso/boot/
 
 # Rules for initcpio images
-initcpio: "$(WORKDIR)"/iso/boot/"$(NAME)".img
-"$(WORKDIR)"/iso/boot/"$(NAME)".img: mkinitcpio.conf "$(WORKDIR)"/root-image/.arch-chroot
+initcpio: "$(WORKDIR)"/iso/boot/kernel26.img
+"$(WORKDIR)"/iso/boot/kernel26.img: mkinitcpio.conf "$(WORKDIR)"/root-image/.arch-chroot
 	mkdir -p "$(WORKDIR)"/iso/boot
-	mkinitcpio -c ./mkinitcpio.conf -b "$(WORKDIR)"/root-image -k $(KVER) -g $@
+	mkinitcpio -c ./mkinitcpio.conf -b "$(WORKDIR)"/root-image -k `uname -r` -g $@
 
 # See: Overlay
 overlay:
@@ -60,14 +63,15 @@ overlay:
 
 # Rule to process isomounts file.
 iso-mounts: "$(WORKDIR)"/isomounts
-"$(WORKDIR)"/isomounts: isomounts root-image
+"$(WORKDIR)"/$(INSTALL_DIR)/isomounts: isomounts root-image
 	sed "s|@ARCH@|$(ARCH)|g" isomounts > $@
 
 # This routine is always executed just before generating the actual image. 
 syslinux: root-image
-	mkdir -p $(WORKDIR)/iso/boot/syslinux
-	cp $(WORKDIR)/root-image/usr/lib/syslinux/*.c32 $(WORKDIR)/iso/boot/syslinux/
-	cp $(WORKDIR)/root-image/usr/lib/syslinux/isolinux.bin $(WORKDIR)/iso/boot/syslinux/
+	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)
+	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/syslinux
+	cp -PR $(WORKDIR)/root-image/usr/lib/syslinux/*.c32 $(WORKDIR)/iso/$(INSTALL_DIR)/syslinux/
+	cp -PR $(WORKDIR)/root-image/usr/lib/syslinux/isolinux.bin $(WORKDIR)/iso/$(INSTALL_DIR)/syslinux/
 
 # In case "make clean" is called, the following routine gets rid of all files created by this Makefile.
 clean:
