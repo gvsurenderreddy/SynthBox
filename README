@@ -3,57 +3,14 @@ What is SynthBox?
 SynthBox is an ArchLinux-based audio production environment on a 
 bootable CD, made using the Archiso utility.
 
-Why another Linux audio production environment?
+There used to be a long-winded explanation here, but I figured the
+easiest way to keep it up-to-date is to point to this page:
 
-Why not?
+http://obsoleteaudio.org/software/synthbox
 
-But seriously, for the same reason there are a hundred custom Linux
-kernels, four different JACK flavors, a googolplex of compressor
-plugins, etc… Because they’re each tailored for a specific use case,
-and they each reflect the tastes of their respective developers/
-customizers.
+So go there for an up-to-date description.
 
-So what is SynthBox’s use case?
 
-In short: Imagine popping a USB stick into any old PC with a decent
-Linux-compatible sound card, and turning it into a live performance
-synth.
-
-There are two main goals for SynthBox:
-
-   1. To be able to boot a CD ot USB-stick into an audio environment
-      tailored for live instrument synthesis, with as little fuss as is
-      currently possible in the Linux Audio world. (Do you like how I
-      qualified that?) To this end, the user account will be customized
-      with sensible defaults that tie apps together in a semi-cohesive
-      environment.
-   2. To showcase the cutting edge of Linux audio software. This is why
-      SynthBox is based on Arch Linux: Because it’s easy to turn source
-      code into installable packages using pacman/makepkg (in fact the
-      whole distro is based around this concept). So SynthBox will stay
-      as true-to-upstream as I can keep it. This is also out of
-      necessity, because I’m not much of a programmer, but I do know a
-      bit about packaging/repositories/etc. from being a sysadmin.
-      
-But that sounds like an unstable OS… certainly not good for live audio
-production, right?
-
-Good point. To this end, there will be versions that are deemed stable
-and versions that are not. Hopefully I’ll converge on a naming convention
-that will make this clear. That’s sort of TBD.
-
-I’m hoping the “liveCD” approach will make it easier to rate the stability
-of each version. That is, if a user is running right from the ISO, I’ll
-know exactly what they’re working with because user-customization will be
-minimal. I would like to eventually use an overlay file system to allow
-user settings (patches & whatnot) to be stored on a USB key. That’s
-another one for the roadmap.
-
-Running it
-
-There will be iso links available, hopefully soon, which you can try.
-Burn them to a CD using your favorite burning utility, or write them to
-a USB stick using dd. Archiso’s images should with with either method.
 
 Get the code
 
@@ -62,14 +19,16 @@ git clone http://github.com/seanbutnotheard/SynthBox.git
 Building & Customizing
 
 I recommend checking out the Archiso page on the Arch Wiki to get a
-general sense of how an Archiso project works.  This project is slightly
-different in that the make command is "make synthbox", though "make all"
-will work too.
+general sense of how an Archiso project works.  Essentially, if
+you don't want to customize, just ...
+
+cd SynthBox
+make
+
+... and Archiso will spit out an ISO file you can burn to CD or dd
+onto a flash drive.  If I've done my part right (which I probably
+haven't), that's all there is to it.
 
 
-All the code I've written is licensed under the GPLv2.  There are some
-files in here that came from other projects, which are all also under 
-redistributable license.  I haven't yet taken note of the licenses of
-all such files;  If you're an author of one of those files, please let
-me know so I can get my attributions straight.  (This is my first
-open-source project, so please go easy on me with regard to licenses.)
+All the code I've written is licensed under the GPLv2.
+
