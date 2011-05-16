@@ -1,6 +1,6 @@
 aufs2
 aufs2-util
-base
+syslinux
 bash
 coreutils
 cpio
@@ -16,6 +16,7 @@ rxvt-unicode
 dbus
 hal
 xorg
+xorg-xinit
 xorg-drivers
 openbox
 obconf
