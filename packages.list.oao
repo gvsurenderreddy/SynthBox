@@ -3,6 +3,7 @@ jack2-dbus-svn
 a2jmidid
 obsoleteaudio/ladspa-plugins
 obsoleteaudio/lv2-plugins
+obsoleteaudio/ardour2-svn
 calf-git
 jamin
 gtk-clearlooks-zenburn

@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
-	<menu id="apps-accessories-menu" label="other apps">
+	<menu id="apps-accessories-menu" label="utilities">
+		<item label="terminal">
+			<action name="Execute">
+				<execute>
+					urxvt
+				</execute>
+			</action>
+		</item>
 		<item label="file manager">
 			<action name="Execute">
 				<execute>
@@ -57,20 +64,73 @@
 		</item>
 	</menu>
 	<menu id="root-menu" label="Openbox 3">
-		<item label="gladish">
+		<item label="manage">
 			<action name="Execute">
 				<execute>
 					gladish
 				</execute>
 			</action>
 		</item>
-		<item label="terminal">
-			<action name="Execute">
-				<execute>
-					urxvt
-				</execute>
-			</action>
-		</item>
+		<menu id="nonladish-apps" label="non-session">
+			<item label="calf host">
+				<action name="Execute">
+					<execute>
+						calfjackhost
+					</execute>
+				</action>
+			</item>
+			<item label="bristol-mini">
+				<action name="Execute">
+					<execute>
+						startBristol -mini
+					</execute>
+				</action>
+			</item>
+			<item label="non-sequencer">
+				<action name="Execute">
+					<execute>
+						non-sequencer
+					</execute>
+				</action>
+			</item>
+			<item label="ardour 2">
+				<action name="Execute">
+					<execute>
+						ardour2
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="ladish-app" label="add to session">
+			<item label="calf host">
+				<action name="Execute">
+					<execute>
+						ladish_control snewapp &quot;calfjackhost&quot;
+					</execute>
+				</action>
+			</item>
+			<item label="bristol-mini">
+				<action name="Execute">
+					<execute>
+						ladish_control snewapp &quot;startBristol -mini&quot;
+					</execute>
+				</action>
+			</item>
+			<item label="non-sequencer">
+				<action name="Execute">
+					<execute>
+						ladish_control snewapp &quot;non-sequencer&quot;
+					</execute>
+				</action>
+			</item>
+			<item label="ardour 2">
+				<action name="Execute">
+					<execute>
+						ardour2
+					</execute>
+				</action>
+			</item>
+		</menu>
 		<menu id="apps-accessories-menu"/>
 		<separator label="System"/>
 		<menu id="system-menu"/>
