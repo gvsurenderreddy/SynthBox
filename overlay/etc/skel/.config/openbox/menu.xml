@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 	<menu id="apps-accessories-menu" label="other apps">
-		<item label="temp">
+		<item label="file manager">
 			<action name="Execute">
 				<execute>
-					command
+					thunar
 				</execute>
 			</action>
 		</item>
@@ -27,6 +27,13 @@
 						yes
 					</enabled>
 				</startupnotify>
+			</action>
+		</item>
+		<item label="tint2 config editor">
+			<action name="Execute">
+				<execute>
+					tintwizard
+				</execute>
 			</action>
 		</item>
 		<separator/>
