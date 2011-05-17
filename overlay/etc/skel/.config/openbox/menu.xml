@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="apps-accessories-menu" label="other apps">
+		<item label="temp">
+			<action name="Execute">
+				<execute>
+					command
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="system-menu" label="system">
+		<item label="openbox menu editor">
+			<action name="Execute">
+				<execute>
+					obmenu
+				</execute>
+			</action>
+		</item>
+		<item label="openbox config">
+			<action name="Execute">
+				<command>
+					obconf
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<separator/>
+		<item label="refresh openbox config">
+			<action name="Reconfigure"/>
+		</item>
+		<separator/>
+		<item label="reboot">
+			<action name="Execute">
+				<execute>
+					urxvt -e sudo reboot
+				</execute>
+			</action>
+		</item>
+		<item label="shutdown">
+			<action name="Execute">
+				<execute>
+					urxvt -e sudo poweroff
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<item label="gladish">
+			<action name="Execute">
+				<execute>
+					gladish
+				</execute>
+			</action>
+		</item>
+		<item label="terminal">
+			<action name="Execute">
+				<execute>
+					urxvt
+				</execute>
+			</action>
+		</item>
+		<menu id="apps-accessories-menu"/>
+		<separator label="System"/>
+		<menu id="system-menu"/>
+	</menu>
+</openbox_menu>
