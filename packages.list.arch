@@ -3,6 +3,7 @@ aufs2-util
 syslinux
 bash
 coreutils
+sudo
 cpio
 dhcpcd
 dnsutils

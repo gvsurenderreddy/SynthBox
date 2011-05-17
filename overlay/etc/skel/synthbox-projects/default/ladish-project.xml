@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+ladish Project.
+-->
+<!-- Tue May 17 14:09:47 2011 -->
+<project name="default" uuid="1f338590-834b-4051-a99a-3c1659c3c117">
+  <room>
+    <port name="Left" uuid="871954a7-7c0f-4092-ae34-465e1f1bb0ca" type="audio" direction="capture" />
+    <port name="Right" uuid="2dc1da00-cebd-47ea-a239-c30db9653e7c" type="audio" direction="capture" />
+    <port name="MIDI" uuid="abc90af1-dcc4-41b3-b3eb-d4f5a9c4f708" type="midi" direction="capture" />
+    <port name="Left" uuid="2776ef6f-39e1-4c5e-8920-3deeb409c3f5" type="audio" direction="playback" />
+    <port name="Right" uuid="b371a9a1-18cb-4932-813c-daf278cf2b20" type="audio" direction="playback" />
+    <port name="Monitor Left" uuid="f50862dd-3071-4727-be1c-3c9a115d2141" type="audio" direction="playback" />
+    <port name="Monitor Right" uuid="35aac0d6-189d-412d-91a1-0a17212cbdb4" type="audio" direction="playback" />
+    <port name="MIDI" uuid="04f5fa90-f453-479d-8f3a-2f92cf78c604" type="midi" direction="playback" />
+  </room>
+  <jack>
+    <clients>
+    </clients>
+  </jack>
+  <clients>
+    <client name="Capture" uuid="9c8ab1b7-211c-4056-bd91-94d63b3df9f2" naming="app">
+      <ports>
+        <port name="Left" uuid="871954a7-7c0f-4092-ae34-465e1f1bb0ca" type="audio" direction="output" />
+        <port name="Right" uuid="2dc1da00-cebd-47ea-a239-c30db9653e7c" type="audio" direction="output" />
+        <port name="MIDI" uuid="abc90af1-dcc4-41b3-b3eb-d4f5a9c4f708" type="midi" direction="output" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1429.000000</key>
+        <key name="http://ladish.org/ns/canvas/y">1102.000000</key>
+      </dict>
+    </client>
+    <client name="Playback" uuid="e53018fe-4ae5-4d4c-b4a1-3b8f12e1ae91" naming="app">
+      <ports>
+        <port name="Left" uuid="2776ef6f-39e1-4c5e-8920-3deeb409c3f5" type="audio" direction="input" />
+        <port name="Right" uuid="b371a9a1-18cb-4932-813c-daf278cf2b20" type="audio" direction="input" />
+        <port name="Monitor Left" uuid="f50862dd-3071-4727-be1c-3c9a115d2141" type="audio" direction="input" />
+        <port name="Monitor Right" uuid="35aac0d6-189d-412d-91a1-0a17212cbdb4" type="audio" direction="input" />
+        <port name="MIDI" uuid="04f5fa90-f453-479d-8f3a-2f92cf78c604" type="midi" direction="input" />
+      </ports>
+      <dict>
+        <key name="http://ladish.org/ns/canvas/x">1622.000000</key>
+        <key name="http://ladish.org/ns/canvas/y">1258.000000</key>
+      </dict>
+    </client>
+  </clients>
+  <connections>
+  </connections>
+  <applications>
+  </applications>
+</project>
