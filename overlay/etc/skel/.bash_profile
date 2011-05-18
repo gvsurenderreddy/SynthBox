@@ -5,6 +5,6 @@ export OOO_FORCE_DESKTOP
 
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   startx &> .xsession-errors
-  logout
+  #logout
 fi
 
