@@ -42,7 +42,7 @@ bootfiles: root-image
 	cp $(WORKDIR)/root-image/boot/vmlinuz26 $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
 	mkdir -p $(WORKDIR)/iso/syslinux
 	cp $(WORKDIR)/root-image/usr/lib/syslinux/isolinux.bin $(WORKDIR)/iso/syslinux/
-	cp boot-files/syslinux/* $(WORKDIR)/iso/syslinux/syslinux.cfg
+	cp boot-files/syslinux/* $(WORKDIR)/iso/syslinux/
 
 # Rules for initcpio images
 initcpio: $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archiso.img
