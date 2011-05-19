@@ -1,3 +1,4 @@
+#Arch official packages
 aufs2
 aufs2-util
 syslinux
@@ -39,3 +40,27 @@ ttf-liberation
 rsnapshot
 flowcanvas
 terminus-font
+
+#ObsoleteAudio and ArchAudio Packages
+mingetty
+jack2-dbus-svn
+a2jmidid
+ladspa-plugins
+lv2-plugins
+ardour2-svn
+calf-git
+jamin
+gtk-clearlooks-zenburn
+ladish
+laditools
+lash
+lv2core
+murrine-themes-collection
+non-sequencer-git
+slv2-svn
+bristol
+tintwizard
+zynjacku
+jconvolver
+zita-at1
+zita-rev1

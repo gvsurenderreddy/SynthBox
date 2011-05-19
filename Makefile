@@ -13,7 +13,7 @@ ARCH?=$(shell uname -m)
 PWD=$(shell pwd)
 FULLNAME=$(PWD)/$(NAME)-$(ver)-$(ARCH).iso
 
-PACKAGES="$(shell cat packages.list.arch packages.list.oao)"
+PACKAGES="$(shell egrep -v ^[[:space:]]*\(\#\|$$\) packages.list)"
 
 kver_FILE=$(WORKDIR)/root-image/etc/mkinitcpio.d/kernel26.kver
 
