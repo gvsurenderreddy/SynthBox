@@ -63,10 +63,10 @@ if not pcall(function() require(awful.util.getdir("config") .. "/menu.lua") end)
                                       { "open terminal", terminal }
                                     }
                           })
+end
 
   mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                        menu = mymainmenu })
-end
 -- }}}
 
 -- {{{ Wibox
