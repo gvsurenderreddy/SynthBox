@@ -51,7 +51,20 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-require(awful.util.getdir("config") .. "/menu.lua")
+if not pcall(function() require("menu") end) then
+  myawesomemenu = {
+     { "manual", terminal .. " -e man awesome" },
+     { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
+     { "edit menu", editor_cmd .. " " .. awful.util.getdir("config") .. "/menu.lua" },
+     { "restart", awesome.restart },
+     { "quit", awesome.quit }
+  }
+
+  mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                      { "open terminal", terminal }
+                                    }
+                          })
+end
 
 mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
