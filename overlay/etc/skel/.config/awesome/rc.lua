@@ -12,7 +12,7 @@ require("naughty")
 beautiful.init(awful.util.getdir("config") .. "/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -52,20 +52,22 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
+if not pcall(function() require(awful.util.getdir("config") .. "/menu.lua") end) then
+  myawesomemenu = {
+     { "manual", terminal .. " -e man awesome" },
+     { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
+     { "restart", awesome.restart },
+     { "quit", awesome.quit }
+  }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+  mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                      { "open terminal", terminal }
+                                    }
+                          })
 
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
+  mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
+                                       menu = mymainmenu })
+end
 -- }}}
 
 -- {{{ Wibox
