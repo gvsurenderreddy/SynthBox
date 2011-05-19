@@ -72,28 +72,91 @@
 			</action>
 		</item>
 		<menu id="nonladish-apps" label="non-session">
-			<item label="calf host">
-				<action name="Execute">
-					<execute>
-						calfjackhost
-					</execute>
-				</action>
-			</item>
-			<item label="bristol-mini">
+			<item label="bristol-mini synth">
 				<action name="Execute">
 					<execute>
 						startBristol -mini
 					</execute>
 				</action>
 			</item>
-			<item label="non-sequencer">
+			<item label="non midi sequencer">
 				<action name="Execute">
 					<execute>
 						non-sequencer
 					</execute>
 				</action>
 			</item>
-			<item label="ardour 2">
+			<item label="alsa modular synth">
+				<action name="Execute">
+					<execute>
+						ams
+					</execute>
+				</action>
+			</item>
+			<item label="yoshimi synth">
+				<action name="Execute">
+					<execute>
+						yoshimi
+					</execute>
+				</action>
+			</item>
+			<item label="calf synth/fx host">
+				<action name="Execute">
+					<execute>
+						calfjackhost
+					</execute>
+				</action>
+			</item>
+			<item label="lv2 fx rack">
+				<action name="Execute">
+					<execute>
+						lv2rack
+					</execute>
+				</action>
+			</item>
+			<item label="lv2 synth rack">
+				<action name="Execute">
+					<execute>
+						zynjacku
+					</execute>
+				</action>
+			</item>
+			<item label="zita-rev1 reverb">
+				<action name="Execute">
+					<execute>
+						zita-rev1
+					</execute>
+				</action>
+			</item>
+			<item label="zita-at1 autotuner">
+				<action name="Execute">
+					<execute>
+						zita-at1
+					</execute>
+				</action>
+			</item>
+			<item label="traditional vu meter">
+				<action name="Execute">
+					<execute>
+						jmeters -t vu system:playback_1 system:playback_2
+					</execute>
+				</action>
+			</item>
+			<item label="graphical vu meter">
+				<action name="Execute">
+					<execute>
+						jkmeter
+					</execute>
+				</action>
+			</item>
+			<item label="audio analyzer">
+				<action name="Execute">
+					<execute>
+						jaaa -J
+					</execute>
+				</action>
+			</item>
+			<item label="ardour daw">
 				<action name="Execute">
 					<execute>
 						ardour2
