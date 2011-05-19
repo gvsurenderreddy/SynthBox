@@ -17,6 +17,7 @@ openssh
 rxvt-unicode
 dbus
 hal
+gconf
 xorg
 xorg-xinit
 xorg-drivers
@@ -43,6 +44,7 @@ terminus-font
 
 #ObsoleteAudio and ArchAudio Packages
 mingetty
+awesome
 jack2-dbus-svn
 a2jmidid
 ladspa-plugins
@@ -64,3 +66,11 @@ zynjacku
 jconvolver
 zita-at1
 zita-rev1
+jaaa
+japa
+aeolus
+jkmeter
+jmeters
+yass
+ams
+yoshimi
