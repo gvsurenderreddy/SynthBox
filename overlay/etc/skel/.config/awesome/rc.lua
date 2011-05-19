@@ -60,7 +60,8 @@ if not pcall(function() require("menu") end) then
      { "quit", awesome.quit }
   }
 
-  mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+  mymainmenu = awful.menu({ items = { { "--couldn't read your menu--", "" },
+                                      { "awesome", myawesomemenu, beautiful.awesome_icon },
                                       { "open terminal", terminal }
                                     }
                           })
