@@ -16,6 +16,7 @@ kernel26rt
 nano
 openssh
 rxvt-unicode
+htop
 dbus
 hal
 gconf
@@ -46,6 +47,7 @@ terminus-font
 
 #ObsoleteAudio and ArchAudio Packages
 mingetty
+rtirq
 awesome
 jack2-dbus-svn
 a2jmidid
@@ -77,3 +79,5 @@ jmeters
 yass
 ams
 yoshimi
+hydrogen
+vmpk
