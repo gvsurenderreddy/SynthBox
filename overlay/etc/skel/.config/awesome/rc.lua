@@ -48,10 +48,10 @@ layouts =
 shifty.config.tags = {
     ["patch"] = { position = 1, exclusive = true, spawn = "gladish", init = true },
     ["seq"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
-    ["synth"] = { exclusive = true, layout = awful.layout.suit.float },
+    ["synth"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["sampler"] = { exclusive = true },
-    ["fx"] = { exclusive = true, layout = awful.layout.suit.float },
-    ["meters"] = { exclusive = true, layout = awful.layout.suit.float },
+    ["fx"] = { exclusive = true, layout = awful.layout.suit.floating },
+    ["meters"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["keyboard"] = { exclusive = true },
     ["files"] = { exclusive = true, layout = awful.layout.suit.tile },
 }
