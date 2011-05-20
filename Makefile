@@ -16,6 +16,7 @@ FULLNAME=$(PWD)/$(NAME)-$(ver)-$(ARCH).iso
 PACKAGES="$(shell egrep -v ^[[:space:]]*\(\#\|$$\) packages.list)"
 
 kver_FILE=$(WORKDIR)/root-image/etc/mkinitcpio.d/kernel26.kver
+rtkver_FILE=$(WORKDIR)/root-image/etc/mkinitcpio.d/kernel26rt.kver
 
 all: myarch-iso
 
@@ -38,17 +39,21 @@ $(WORKDIR)/root-image/.arch-chroot:
 # Rule for make /boot
 bootfiles: root-image
 	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)
-	cp $(WORKDIR)/root-image/boot/System.map26 $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
-	cp $(WORKDIR)/root-image/boot/vmlinuz26 $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
+	cp $(WORKDIR)/root-image/boot/System.map26* $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
+	cp $(WORKDIR)/root-image/boot/vmlinuz26* $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
 	mkdir -p $(WORKDIR)/iso/syslinux
 	cp $(WORKDIR)/root-image/usr/lib/syslinux/isolinux.bin $(WORKDIR)/iso/syslinux/
 	cp boot-files/syslinux/* $(WORKDIR)/iso/syslinux/
 
 # Rules for initcpio images
-initcpio: $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archiso.img
+initcpio: $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archiso.img $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archisort.img
 $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archiso.img: mkinitcpio.conf $(WORKDIR)/root-image/.arch-chroot
 	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
 	mkinitcpio -c ./mkinitcpio.conf -b $(WORKDIR)/root-image -k $(shell grep ^ALL_kver $(kver_FILE) | cut -d= -f2) -g $@
+
+$(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archisort.img: mkinitcpio.conf $(WORKDIR)/root-image/.archrt-chroot
+	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
+	mkinitcpio -c ./mkinitcpio.conf -b $(WORKDIR)/root-image -k $(shell grep ^ALL_kver $(rtkver_FILE) | cut -d= -f2) -g $@
 
 
 # overlay filesystem
