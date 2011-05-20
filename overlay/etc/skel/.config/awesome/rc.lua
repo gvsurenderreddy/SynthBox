@@ -349,10 +349,6 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
-    -- Add a titlebar
-    if c.floating then
-      awful.titlebar.add(c, { modkey = modkey })
-    end
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)
@@ -377,4 +373,33 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+--  Arrange signal handler
+for s = 1, screen.count() do screen[s]:add_signal("arrange", function ()
+    local clients = awful.client.visible(s)
+    local layout  = awful.layout.getname(awful.layout.get(s))
+
+    if #clients > 0 then -- Fine grained borders and floaters control
+        for _, c in pairs(clients) do -- Floaters always have borders
+            if awful.client.floating.get(c) or layout == "floating" then
+                c.border_width = beautiful.border_width
+
+                if not c.fullscreen then -- Floaters have titlebars
+                    if not c.titlebar and c.class ~= "Xmessage" then
+                        awful.titlebar.add(c, { modkey = modkey })
+                    end -- Floaters are always on top
+                    c.above = true
+                end
+
+            -- No borders with only one visible client
+            elseif #clients == 1 or layout == "max" then
+                clients[1].border_width = 0
+            else
+                c.border_width = beautiful.border_width
+            end
+        end
+    end
+  end)
+end
+
 -- }}}
