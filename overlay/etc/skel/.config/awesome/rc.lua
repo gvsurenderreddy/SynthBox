@@ -46,22 +46,35 @@ layouts =
 
 -- tag settings
 shifty.config.tags = {
-    ["synthbox"] = { position = 1, exclusive = true, spawn = "gladish", init = true },
+    ["patch"] = { position = 1, exclusive = true, spawn = "gladish", init = true },
+    ["seq"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
+    ["synth"] = { exclusive = true, layout = awful.layout.suit.float },
+    ["sampler"] = { exclusive = true },
+    ["fx"] = { exclusive = true, layout = awful.layout.suit.float },
+    ["meters"] = { exclusive = true, layout = awful.layout.suit.float },
+    ["keyboard"] = { exclusive = true },
+    ["files"] = { exclusive = true, layout = awful.layout.suit.tile },
 }
 
 
 -- client settings
 -- order here matters, early rules will be applied first
 shifty.config.apps = {
-         { match = { "gladish" } , tag = "synthbox" } ,
+         { match = { "gladish" } , tag = "patch" } ,
+         { match = { "ladiconf" }, tag = "patch", float = true },
          { match = { "ardour_editor" } , tag = "ardour" } ,
          { match = { "ardour_mixer" } , tag = "mixer" } ,
-         { match = { "ladiconf" }, tag = "synthbox", float = true },
-         { match = { "bristol" }, tag = "bristol", float = true },
+         { match = { "hydrogen" }, tag = "hydrogen" } ,
+         { match = { "seq24", "non-sequencer" }, tag = "seq" },
+         { match = { "calf" }, tag = "calf", float = true },
+         { match = { "zynjacku", "yoshimi", "bristol", "brighton" }, tag = "synth", float = true },
+         { match = { "qsampler" }, tag = "sampler" },
+         { match = { "lv2rack", "Jc_Gui", "zita" }, tag = "fx" },
+         { match = { "jmeters", "jkmeter", "jaaa", "japa" }, tag = "meters" },
          { match = { "urxvt" }, tag = "terminal" },
          { match = { "xterm" }, intrusive = true, float = true },
          { match = { "thunar" }, tag = "files" },
-         { match = { "seq24" }, tag = "seq24", layout = awful.layout.suit.fair.horizontal },
+         { match = { "mousepad", "ristretto" }, intrusive = true },
          { match = { "" }, buttons = {
                              awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
                              awful.button({ modkey }, 1, function (c) awful.mouse.client.move() end),
