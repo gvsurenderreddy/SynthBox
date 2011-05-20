@@ -48,6 +48,8 @@ layouts =
 shifty.config.tags = {
     ["patch"] = { position = 1, exclusive = true, spawn = "gladish", init = true },
     ["seq"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
+    ["daw"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
+    ["mixer"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
     ["synth"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["sampler"] = { exclusive = true },
     ["fx"] = { exclusive = true, layout = awful.layout.suit.floating },
@@ -63,8 +65,9 @@ shifty.config.tags = {
 shifty.config.apps = {
          { match = { "gladish" } , tag = "patch" } ,
          { match = { "ladiconf" }, tag = "patch", float = true },
-         { match = { "ardour_editor" } , tag = "ardour" } ,
-         { match = { "ardour_mixer" } , tag = "mixer" } ,
+         { match = { "ardour_editor" } , tag = "daw" } ,
+         { match = { "mixer" } , tag = "mixer" } ,
+         { match = { "ardour" } , intrusive = true } ,
          { match = { "hydrogen" }, tag = "hydrogen" } ,
          { match = { "seq24", "non-sequencer" }, tag = "seq" },
          { match = { "calf" }, tag = "calf", float = true },
@@ -381,6 +384,7 @@ client.add_signal("manage", function (c, startup)
 
         -- Put windows in a smart way, only if they does not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
+            awful.placement.centered(c)
             awful.placement.no_overlap(c)
             awful.placement.no_offscreen(c)
         end
