@@ -51,7 +51,7 @@ $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archiso.img: mkinitcpio.conf $(WORKDI
 	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
 	mkinitcpio -c ./mkinitcpio.conf -b $(WORKDIR)/root-image -k $(shell grep ^ALL_kver $(kver_FILE) | cut -d= -f2) -g $@
 
-$(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archisort.img: mkinitcpio.conf $(WORKDIR)/root-image/.archrt-chroot
+$(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archisort.img: mkinitcpio.conf $(WORKDIR)/root-image/.arch-chroot
 	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
 	mkinitcpio -c ./mkinitcpio.conf -b $(WORKDIR)/root-image -k $(shell grep ^ALL_kver $(rtkver_FILE) | cut -d= -f2) -g $@
 
