@@ -59,7 +59,8 @@ shifty.config.apps = {
          { match = { "ladiconf" }, tag = "synthbox", float = true },
          { match = { "bristol" }, tag = "bristol", float = true },
          { match = { "urxvt" }, tag = "terminal" },
-         { match = { "xterm" }, intrusive = true },
+         { match = { "xterm" }, intrusive = true, float = true },
+         { match = { "thunar" }, tag = "files" },
          { match = { "" }, buttons = {
                              awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
                              awful.button({ modkey }, 1, function (c) awful.mouse.client.move() end),
