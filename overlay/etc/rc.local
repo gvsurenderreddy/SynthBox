@@ -8,13 +8,15 @@ chmod 0440 /etc/sudoers
 mkdir -p /home/$LIVE_USERNAME
 groupadd admin
 useradd -u 1000 -g users -G storage,optical,audio,video,network,wheel,power,hal,lp,admin -d /home/$LIVE_USERNAME $LIVE_USERNAME
-passwd -d $LIVE_USERNAME
+passwd -d $LIVE_USERNAME &> /dev/null
 chown synth /home/$LIVE_USERNAME
-#TODO: See if we're running in a virtual machine, and modify the base ladish studio to use the "dummy" driver if so
 su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVE_USERNAME/" $LIVE_USERNAME
 su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
 
-sleep 2
+#are we running in virtualbox? if so, use the dummy backend for jack.
+if [ -n "`route | grep 10.0.2.2`"]; then
+  su -c "cp /home/$LIVE_USERNAME/.config/jack/dummy-conf.xml /home/$LIVE_USERNAME/.config/jack/conf.xml" $LIVE_USERNAME
+fi
 
 amixer sset 'Master Mono' 90% unmute &> /dev/null
 amixer sset 'Master' 90% unmute &> /dev/null
