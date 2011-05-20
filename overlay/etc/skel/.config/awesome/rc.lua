@@ -61,6 +61,7 @@ shifty.config.apps = {
          { match = { "urxvt" }, tag = "terminal" },
          { match = { "xterm" }, intrusive = true, float = true },
          { match = { "thunar" }, tag = "files" },
+         { match = { "seq24" }, tag = "seq24", layout = awful.layout.suit.fair.horizontal },
          { match = { "" }, buttons = {
                              awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
                              awful.button({ modkey }, 1, function (c) awful.mouse.client.move() end),
