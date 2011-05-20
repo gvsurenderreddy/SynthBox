@@ -14,7 +14,7 @@ chown synth /home/$LIVE_USERNAME
 su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVE_USERNAME/" $LIVE_USERNAME
 su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
 
-sleep 10
+sleep 2
 
 amixer sset 'Master Mono' 90% unmute &> /dev/null
 amixer sset 'Master' 90% unmute &> /dev/null

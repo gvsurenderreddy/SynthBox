@@ -53,10 +53,13 @@ shifty.config.tags = {
 -- client settings
 -- order here matters, early rules will be applied first
 shifty.config.apps = {
-         { match = { "ardour" } , tag = "ardour" } ,
-         { match = { "mixer" } , tag = "mixer" } ,
+         { match = { "gladish" } , tag = "synthbox" } ,
+         { match = { "ardour_editor" } , tag = "ardour" } ,
+         { match = { "ardour_mixer" } , tag = "mixer" } ,
          { match = { "ladiconf" }, tag = "synthbox", float = true },
          { match = { "bristol" }, tag = "bristol", float = true },
+         { match = { "urxvt" }, tag = "terminal" },
+         { match = { "xterm" }, intrusive = true },
          { match = { "" }, buttons = {
                              awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
                              awful.button({ modkey }, 1, function (c) awful.mouse.client.move() end),
@@ -335,6 +338,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { role = "plugin_ui" },
+      properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
@@ -345,7 +350,9 @@ awful.rules.rules = {
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
     -- Add a titlebar
-    awful.titlebar.add(c, { modkey = modkey })
+    if c.floating then
+      awful.titlebar.add(c, { modkey = modkey })
+    end
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)

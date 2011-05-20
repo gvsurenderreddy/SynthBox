@@ -22,6 +22,7 @@ gconf
 xorg
 xorg-xinit
 xorg-drivers
+xterm
 openbox
 obconf
 obmenu
