@@ -58,9 +58,9 @@ shifty.config.apps = {
          { match = { "ladiconf" }, tag = "synthbox", float = true },
          { match = { "bristol" }, tag = "bristol", float = true },
          { match = { "" }, buttons = {
-                             button({ }, 1, function (c) client.focus = c; c:raise() end),
-                             button({ modkey }, 1, function (c) awful.mouse.client.move() end),
-                             button({ modkey }, 3, awful.mouse.client.resize ), }, },
+                             awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
+                             awful.button({ modkey }, 1, function (c) awful.mouse.client.move() end),
+                             awful.button({ modkey }, 3, awful.mouse.client.resize ), }, },
 }
 
 -- tag defaults
@@ -279,12 +279,6 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end)
 )
-
--- Compute the maximum number of digit we need, limited to 9
-keynumber = 0
-for s = 1, screen.count() do
-   keynumber = math.min(9, math.max(#tags[s], keynumber));
-end
 
 -- Bind all key numbers to Shifty's tags.
 for i=1, ( shifty.config.maxtags or 9 ) do
