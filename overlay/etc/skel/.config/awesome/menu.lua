@@ -44,7 +44,7 @@ mymainmenu = awful.menu.new(
 	{ "zita reverb", "zita-rev1" },
 	{ "traditional vu meter", "jmeters -t vu system:playback_1 system:playback_2" },
 	{ "graphical volume meter", "jkmeter" },
-	{ "audio analyzer", "jaaa"},
+	{ "audio analyzer", "jaaa -J"},
 	--{ "linuxsampler", "qsampler" },
 	{ "vmpk", "vmpk" },
 	{ "jamin", "jamin" },
