@@ -54,6 +54,7 @@ shifty.config.tags = {
     ["meters"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["keyboard"] = { exclusive = true },
     ["files"] = { exclusive = true, layout = awful.layout.suit.tile },
+    ["terminal"] = { layout = awful.layout.suit.fair.horizontal },
 }
 
 

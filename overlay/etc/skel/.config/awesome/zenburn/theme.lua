@@ -24,10 +24,10 @@ theme.bg_urgent = "#3F3F3F"
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = "2"
-theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#6F6F6F"
-theme.border_marked = "#CC9393"
+theme.border_width  = "1"
+theme.border_normal = "#000000"
+theme.border_focus  = "#8baed5"
+theme.border_marked = "#aaaaaa"
 -- }}}
 
 -- {{{ Titlebars
@@ -66,7 +66,7 @@ theme.mouse_finder_color = "#CC9393"
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_height = "15"
-theme.menu_width  = "100"
+theme.menu_width  = "150"
 -- }}}
 
 -- {{{ Icons
@@ -79,7 +79,7 @@ theme.taglist_squares_unsel = awful.util.getdir("config") .. "/zenburn/taglist/s
 -- {{{ Misc
 theme.awesome_icon           = awful.util.getdir("config") .. "/zenburn/arch-linux-icon.png"
 theme.menu_submenu_icon      = awful.util.getdir("config") .. "/zenburn/submenu.png"
-theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
+theme.tasklist_floating_icon = awful.util.getdir("config") .. "/zenburn/tasklist/floatingw.png"
 -- }}}
 
 -- {{{ Layout
