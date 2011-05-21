@@ -75,7 +75,7 @@ shifty.config.apps = {
          { match = { "qsampler" }, tag = "sampler" },
          { match = { "lv2rack", "Jc_Gui", "zita" }, tag = "fx" },
          { match = { "jmeters", "jkmeter", "jaaa", "japa" }, tag = "meters" },
-         { match = { "vmpk" }, tag = "keyboard" },
+         { match = { "jack-keyboard" }, tag = "keyboard" },
          { match = { "urxvt" }, tag = "terminal" },
          { match = { "xterm" }, intrusive = true, float = true },
          { match = { "thunar" }, tag = "files" },

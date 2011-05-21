@@ -46,7 +46,7 @@ mymainmenu = awful.menu.new(
 	{ "graphical volume meter", "jkmeter" },
 	{ "audio analyzer", "jaaa -J"},
 	--{ "linuxsampler", "qsampler" },
-	{ "virtual keyboard", "vmpk" },
+	{ "virtual keyboard", "jack-keyboard" },
 	{ "jamin mastering suite", "jamin" },
 	{ "--" },
 	{ "utilities", myutilsmenu},
