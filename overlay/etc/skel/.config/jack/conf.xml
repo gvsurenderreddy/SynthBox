@@ -15,7 +15,7 @@ it will be overwritten next time jackdbus saves.
  <drivers>
   <driver name="alsa">
    <option name="period">512</option>
-   <option name="midi-driver">raw</option>
+   <option name="midi-driver">seq</option>
   </driver>
   <driver name="dummy">
   </driver>
