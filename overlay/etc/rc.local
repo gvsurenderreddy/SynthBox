@@ -14,7 +14,7 @@ su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVE_USERNAME/" $LIVE_USERNAME
 su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
 
 #are we running in virtualbox? if so, use the dummy backend for jack.
-if [ -n "`route | grep 10.0.2.2`"]; then
+if [ "`route | grep 10.0.2.2`" != "" ]; then
   su -c "cp /home/$LIVE_USERNAME/.config/jack/dummy-conf.xml /home/$LIVE_USERNAME/.config/jack/conf.xml" $LIVE_USERNAME
 fi
 
