@@ -34,7 +34,7 @@ mymainmenu = awful.menu.new(
 	{ "non midi sequencer", "non-sequencer" },
 	{ "seq24 midi sequencer", "seq24" },
 	{ "bristol mini", "startBristol -mini" },
-	{ "yoshimi synth", "yoshimi" },
+	{ "yoshimi synth", "yoshimi -j -J" },
 	{ "lv2 synth host", "zynjacku" },
 	{ "lv2 fx host", "lv2rack" },
 	{ "calf synth/fx host", "calfjackhost" },
