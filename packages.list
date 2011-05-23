@@ -53,7 +53,7 @@ alsa-utils
 celt-0.7
 
 #ArchAudio Packages
-kernel26rt
+archaudio-testing/kernel26rt
 
 #ObsoleteAudio Packages
 ladish
