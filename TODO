@@ -1,9 +1,11 @@
 SynthBox TODO (before a real release)
 
 1 - Address Ladish crashes (maybe use git PKGBUILD?)
-2 - Make menu & WM Rules dynamically generated & Ladish-aware
-3 - Make USB stick automatically mounted & symlinked to home dir (or maybe rsync backup script?)
-4 - More synths to package:
+2 - Get realtime kernel & rtirq script working
+3 - Determine appropriate pam memory limit at runtime
+4 - Make menu & WM Rules dynamically generated & Ladish-aware
+5 - Make USB stick automatically mounted & symlinked to home dir (or maybe rsync backup script?)
+6 - More synths to package:
     LinuxSampler
     Ingen
     PureData
