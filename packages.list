@@ -1,4 +1,6 @@
 #Arch official packages
+
+#core-ish stuff first
 aufs2
 aufs2-util
 syslinux
@@ -9,11 +11,12 @@ cpio
 dhcpcd
 dnsutils
 file
-feh
 fuse
 kernel26
 kernel26rt
 nano
+
+#now more desktop-related packages
 openssh
 rxvt-unicode
 htop
@@ -27,11 +30,10 @@ xterm
 openbox
 obconf
 obmenu
+feh
 tint2
 gtk-engine-murrine
 gtk-theme-switch2
-alsa-utils
-moc
 thunar
 thunar-volman
 thunar-archive-plugin
@@ -42,14 +44,23 @@ tango-icon-theme
 tango-icon-theme-extras
 ttf-liberation
 rsnapshot
-flowcanvas
 terminus-font
 
-#ObsoleteAudio and ArchAudio Packages
+#audio packages in extra or community
+flowcanvas
+hydrogen
+moc
+alsa-utils
+jack2-dbus
+celt-0.7
+
+#ArchAudio Packages
+ffado
+
+#ObsoleteAudio Packages
 mingetty
 rtirq
 awesome
-jack2-dbus
 a2jmidid
 ladspa-plugins
 lv2-plugins
@@ -80,6 +91,5 @@ jmeters
 yass
 ams
 yoshimi
-hydrogen
 jack-keyboard
 minicomputer
