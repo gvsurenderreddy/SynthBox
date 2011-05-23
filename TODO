@@ -1,0 +1,5 @@
+SynthBox TODO (before a real release)
+
+1 - Address Ladish crashes (maybe use git PKGBUILD?)
+2 - Make menu & WM Rules dynamically generated & Ladish-aware
+3 - Make USB stick automatically mounted & symlinked to home dir (or maybe rsnapshot backup script?)
