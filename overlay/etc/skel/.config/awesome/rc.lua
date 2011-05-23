@@ -71,7 +71,7 @@ shifty.config.apps = {
          { match = { "ardour" } , intrusive = true } ,
          { match = { "seq24", "non-sequencer" }, tag = "seq" },
          { match = { "calf" }, tag = "calf", float = true },
-         { match = { "zynjacku", "yoshimi", "Yoshimi", "bristol", "brighton" }, tag = "synth", float = true },
+         { match = { "zynjacku", "yoshimi", "Yoshimi", "bristol", "brighton", "minicomputer" }, tag = "synth", float = true },
          { match = { "qsampler" }, tag = "sampler" },
          { match = { "lv2rack", "Jc_Gui", "zita" }, tag = "fx" },
          { match = { "jmeters", "jkmeter", "jaaa", "japa" }, tag = "meters" },
