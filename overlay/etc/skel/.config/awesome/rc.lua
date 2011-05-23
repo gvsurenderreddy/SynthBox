@@ -19,7 +19,7 @@ editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 separator = widget({ type = "textbox" })
-separator.text = "|"
+separator.text = " | "
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
