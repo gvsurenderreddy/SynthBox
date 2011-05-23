@@ -18,6 +18,9 @@ terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
+separator = widget({ type = "textbox" })
+separator.text = "|"
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -198,6 +201,7 @@ for s = 1, screen.count() do
         {
             mylauncher,
             mytaglist[s],
+            separator,
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
