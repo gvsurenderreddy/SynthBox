@@ -13,7 +13,6 @@ dnsutils
 file
 fuse
 kernel26
-kernel26rt
 nano
 
 #now more desktop-related packages
@@ -47,29 +46,28 @@ rsnapshot
 terminus-font
 
 #audio packages in extra or community
-flowcanvas
+jack2-dbus
 hydrogen
 moc
 alsa-utils
-jack2-dbus
 celt-0.7
 
 #ArchAudio Packages
-ffado
+kernel26rt
 
 #ObsoleteAudio Packages
+ladish
+laditools
+a2jmidid
 mingetty
 rtirq
 awesome
-a2jmidid
 ladspa-plugins
 lv2-plugins
 ardour2-svn
 calf-git
 jamin
 gtk-clearlooks-zenburn
-ladish
-laditools
 lash
 lv2core
 murrine-themes-collection
