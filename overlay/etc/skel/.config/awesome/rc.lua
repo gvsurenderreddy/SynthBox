@@ -91,7 +91,7 @@ shifty.config.apps = {
 
 -- tag defaults
 shifty.config.defaults = {
-  layout = awful.layout.suit.tile,
+  layout = awful.layout.suit.fair.horizontal,
   ncol = 1,
   mwfact = 0.60,
   floatBars=true,
