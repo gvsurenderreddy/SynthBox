@@ -10,4 +10,5 @@ SynthBox TODO (before a real release)
     Ingen
     PureData
     Csound/QuteCsound
+    Tapeutape
 7 - Add CPU/MEM usage widgets to awesome panel
