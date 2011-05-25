@@ -53,9 +53,9 @@ alsa-utils
 celt-0.7
 
 #ArchAudio Packages
-archaudio-testing/kernel26rt
 
 #ObsoleteAudio Packages
+obsoleteaudio/kernel26rt
 ladish
 laditools
 a2jmidid

@@ -55,7 +55,6 @@ $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/archisort.img: mkinitcpio.conf $(WORK
 	mkdir -p $(WORKDIR)/iso/$(INSTALL_DIR)/boot/$(ARCH)/
 	mkinitcpio -c ./mkinitcpio.conf -b $(WORKDIR)/root-image -k $(shell grep ^ALL_kver $(rtkver_FILE) | cut -d= -f2) -g $@
 
-
 # overlay filesystem
 overlay:
 	cp -r overlay $(WORKDIR)/
