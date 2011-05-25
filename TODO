@@ -11,4 +11,6 @@ SynthBox TODO (before a real release)
     PureData
     Csound/QuteCsound
     Tapeutape
+    Guitarix and/or Rackarrack
+    Superlooper
 7 - Add CPU/MEM usage widgets to awesome panel
