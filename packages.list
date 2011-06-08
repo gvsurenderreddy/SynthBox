@@ -1,6 +1,9 @@
+#======================
 #Arch official packages
+#======================
 
 #core-ish stuff first
+#note that packages in "base" don't need to be included here.
 aufs2
 aufs2-util
 syslinux
@@ -12,7 +15,6 @@ dhcpcd
 dnsutils
 file
 fuse
-kernel26
 nano
 gdb
 
@@ -53,9 +55,9 @@ moc
 alsa-utils
 celt-0.7
 
-#ArchAudio Packages
-
-#ObsoleteAudio Packages
+#====================================
+#ArchAudio and ObsoleteAudio Packages
+#====================================
 ladish
 laditools
 a2jmidid
