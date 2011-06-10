@@ -4,7 +4,8 @@ SynthBox TODO (before a real release)
 2 - Get realtime kernel & rtirq script working  --> postponed.
 3 - Determine appropriate pam memory limit at runtime
 4 - Make menu & WM Rules dynamically generated & Ladish-aware
-5 - Make USB stick automatically mounted & symlinked to home dir (or maybe rsync backup script?)
+5 - Make USB stick automatically mounted & symlinked to home dir (or 
+    maybe rsync backup script?)
 6 - More synths/apps to package:
     LinuxSampler
     Ingen
@@ -14,3 +15,5 @@ SynthBox TODO (before a real release)
     Guitarix and/or Rackarrack
     Superlooper
 7 - Add CPU/MEM usage widgets to awesome panel
+8 - Add code to add an appropriate mixer to the menu and change jack 
+    backend if the defaults won't do

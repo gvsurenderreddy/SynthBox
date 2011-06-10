@@ -53,6 +53,7 @@ jack2-dbus
 hydrogen
 moc
 alsa-utils
+alsa-firmware
 celt-0.7
 
 #====================================

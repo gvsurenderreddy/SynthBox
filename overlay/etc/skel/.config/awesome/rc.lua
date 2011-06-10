@@ -13,6 +13,17 @@ require("shifty")
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/zenburn/theme.lua")
 
+-- Execute command & return its output
+function execute_command(command)
+  local fh = io.popen(command)
+  local str = ""
+  for i in fh:lines() do
+    str = str .. i
+  end
+  io.close(fh)
+  return str
+end
+
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
@@ -102,7 +113,9 @@ shifty.init()
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-if not pcall(function() require("menu") end) then
+menuloaded,errormessage = pcall( function() require("menu") end )
+if not menuloaded then
+  naughty.notify({ text = errormessage , timeout = 0 })
   myawesomemenu = {
      { "manual", terminal .. " -e man awesome" },
      { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
