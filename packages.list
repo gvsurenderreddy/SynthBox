@@ -4,8 +4,6 @@
 
 #core-ish stuff first
 #note that packages in "base" don't need to be included here.
-aufs2
-aufs2-util
 syslinux
 bash
 coreutils
