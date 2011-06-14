@@ -7,7 +7,6 @@ SynthBox TODO (before a real release)
 5 - Make USB stick automatically mounted & symlinked to home dir (or 
     maybe rsync backup script?)
 6 - More synths/apps to package:
-    LinuxSampler
     Ingen
     PureData
     Csound/QuteCsound
