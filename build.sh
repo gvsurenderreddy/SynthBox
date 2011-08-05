@@ -25,6 +25,9 @@ make_packages() {
 make_customize_root_image() {
     if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
         cp -af root-image ${work_dir}
+        chown -R root:root ${work_dir}/root-image/etc
+        chmod -R go-w ${work_dir}/root-image/etc
+        chmod a+x ${work_dir}/root-image/etc/rc.d/*
         chmod 750 ${work_dir}/root-image/etc/sudoers.d
         chmod 440 ${work_dir}/root-image/etc/sudoers.d/g_wheel
         chmod 440 ${work_dir}/root-image/etc/sudoers.d/g_admin
