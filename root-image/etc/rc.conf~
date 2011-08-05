@@ -6,7 +6,7 @@
 LOCALE_DEFAULT="en_US.UTF-8"
 DAEMON_LOCALE_DEFAULT="no"
 CLOCK_DEFAULT="UTC"
-TIMEZONE_DEFAULT="America/New_York"
+TIMEZONE_DEFAULT="Canada/Pacific"
 KEYMAP_DEFAULT="us"
 CONSOLEFONT_DEFAULT=
 CONSOLEMAP_DEFAULT=
@@ -21,13 +21,13 @@ CONSOLEFONT="$(kernel_cmdline consolefont ${CONSOLEFONT_DEFAULT})"
 CONSOLEMAP="$(kernel_cmdline consolemap ${CONSOLEMAP_DEFAULT})"
 USECOLOR="$(kernel_cmdline usecolor ${USECOLOR_DEFAULT})"
 
-MODULES=(snd_seq)
+MODULES=()
 
 UDEV_TIMEOUT=30
 USEDMRAID="no"
 USEBTRFS="no"
 USELVM="no"
 
-HOSTNAME="synthbox"
+HOSTNAME="archiso"
 
-DAEMONS=(hwclock syslog-ng archiso rtirq dbus hal network net-profiles netfs sshd)
+DAEMONS=(hwclock syslog-ng archiso)
