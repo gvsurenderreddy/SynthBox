@@ -5,8 +5,6 @@
 
 do_setup_live_environment()
 {
-  LIVE_USERNAME=synth
-
   chmod 0440 /etc/sudoers 
   mkdir -p /home/$LIVE_USERNAME
   groupadd admin
