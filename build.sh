@@ -2,7 +2,7 @@
 
 set -e -u
 
-name=archlinux
+name=synthbox
 iso_label="ARCH_$(date +%Y%m)"
 version=$(date +%Y.%m.%d)
 install_dir=arch
@@ -18,7 +18,7 @@ make_basefs() {
 
 # Additional packages (root-image)
 make_packages() {
-    mkarchiso ${verbose} -D "${install_dir}" -p "$(grep -v ^# packages.${arch})" create "${work_dir}"
+    mkarchiso ${verbose} -D "${install_dir}" -p "$(grep -v ^# packages.list)" create "${work_dir}"
 }
 
 # Customize installation (root-image)
