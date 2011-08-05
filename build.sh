@@ -8,7 +8,7 @@ version=$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
-verbose="n"
+verbose="y"
 
 # Base installation (root-image)
 make_basefs() {
