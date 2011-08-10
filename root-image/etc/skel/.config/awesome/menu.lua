@@ -42,6 +42,7 @@ mymainmenu = awful.menu.new(
 	{ "lv2 synth host", ladish_snewapp .. "zynjacku 'lv2 synth host'" },
 	{ "lv2 fx host", ladish_snewapp .. "lv2rack 'lv2 fx host'" },
 	{ "calf synth/fx host", ladish_snewapp .. "calfjackhost 'calf host'" },
+	{ "carla synth/fx host", ladish_snewapp .. "carla 'carla host'" },
 	{ "jconvolver", ladish_snewapp .. "Jc_Gui 'jconvolver'" },
 	{ "hydrogen", ladish_snewapp .. "hydrogen 'hydrogen'" },
 	{ "sooperlooper", ladish_snewapp .. "sooperlooper 'sooperlooper'" },
