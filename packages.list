@@ -57,6 +57,8 @@ linuxsampler
 #====================================
 #ArchAudio and ObsoleteAudio Packages
 #====================================
+alsa-tools
+alsa-tools-ice1712
 ladish
 laditools
 a2jmidid
