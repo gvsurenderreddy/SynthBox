@@ -14,6 +14,8 @@ myutilsmenu = {
 	{ "terminal", terminal},
 	{ "file manager", "thunar"},
 	{ "gladish", "gladish" },
+	{ "klaudia", "klaudia" },
+	{ "claudia", "claudia" },
 	{ "alsamixer", terminal .. " -e alsamixer" },
 }
 
@@ -44,7 +46,7 @@ mymainmenu = awful.menu.new(
 	{ "hydrogen", ladish_snewapp .. "hydrogen 'hydroge'" },
 	{ "zita autotuner", ladish_snewapp .. "zita-at1 'zita autotuner'" },
 	{ "zita reverb", ladish_snewapp .. "zita-rev1 'zita reverb'" },
-	{ "traditional vu meter", ladish_snewapp .. "'jmeters -t vu system:playback_1 system:playback_2' 'vu meter'" },
+	{ "traditional vu meter", ladish_snewapp .. "'jmeters -t vu system:capture_1 system:capture_2' 'vu meter'" },
 	{ "graphical volume meter", ladish_snewapp .. "jkmeter 'volume meter'" },
 	{ "audio analyzer", ladish_snewapp .. "'jaaa -J' 'audio analyzer'"},
 	{ "linuxsampler", ladish_snewapp .. "qsampler 'linuxsampler'" },

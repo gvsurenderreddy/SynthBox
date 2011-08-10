@@ -60,7 +60,8 @@ layouts =
 
 -- tag settings
 shifty.config.tags = {
-    ["patch"] = { position = 1, exclusive = true, spawn = "gladish", init = true },
+    ["apps"] = { position = 1, exclusive = true, spawn = "klaudia", init = true },
+    ["patch"] = { position = 2, exclusive = true, spawn = "claudia", init = true },
     ["seq"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
     ["daw"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
     ["mixer"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
@@ -77,7 +78,8 @@ shifty.config.tags = {
 -- client settings
 -- order here matters, early rules will be applied first
 shifty.config.apps = {
-         { match = { "gladish" } , tag = "patch" } ,
+         { match = { "klaudia" } , tag = "apps" } ,
+         { match = { "gladish", "claudia", "catia" } , tag = "patch" } ,
          { match = { "ladiconf" }, tag = "patch", float = true },
          { match = { "ardour_editor" } , tag = "daw" } ,
          { match = { "hydrogen" }, tag = "hydrogen" } ,
