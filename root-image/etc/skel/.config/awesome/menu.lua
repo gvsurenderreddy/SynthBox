@@ -13,9 +13,9 @@ ladish_snewapp = "python2 /usr/bin/ladish_control snewapp "
 myutilsmenu = {
 	{ "terminal", terminal},
 	{ "file manager", "thunar"},
-	{ "gladish", "gladish" },
-	{ "klaudia", "klaudia" },
-	{ "claudia", "claudia" },
+	{ "klaudia app library", "klaudia" },
+	{ "claudia control app", "claudia" },
+	{ "gladish control app", "gladish" },
 	{ "alsamixer", terminal .. " -e alsamixer" },
 }
 

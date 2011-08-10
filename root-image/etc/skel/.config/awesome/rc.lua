@@ -60,16 +60,16 @@ layouts =
 
 -- tag settings
 shifty.config.tags = {
-    ["apps"] = { position = 1, exclusive = true, spawn = "klaudia", init = true },
     ["patch"] = { position = 2, exclusive = true, spawn = "claudia", init = true },
-    ["seq"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
-    ["daw"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
-    ["mixer"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
+    ["apps"] = { exclusive = true },
+    ["seq"] = { exclusive = true },
+    ["daw"] = { exclusive = true },
+    ["mixer"] = { exclusive = true },
     ["synth"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["sampler"] = { exclusive = true },
     ["fx"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["meters"] = { exclusive = true, layout = awful.layout.suit.floating },
-    ["keyboard"] = { exclusive = true, layout = awful.layout.suit.fair.horizontal },
+    ["keyboard"] = { exclusive = true },
     ["files"] = { exclusive = true, layout = awful.layout.suit.tile },
     ["terminal"] = { layout = awful.layout.suit.fair.horizontal },
 }
