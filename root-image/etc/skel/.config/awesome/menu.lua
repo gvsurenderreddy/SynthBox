@@ -52,6 +52,7 @@ mymainmenu = awful.menu.new(
 	{ "graphical volume meter", ladish_snewapp .. "jkmeter 'volume meter'" },
 	{ "audio analyzer", ladish_snewapp .. "'jaaa -J' 'audio analyzer'"},
 	{ "linuxsampler", ladish_snewapp .. "qsampler 'linuxsampler'" },
+	{ "tapeutape sampler", ladish_snewapp .. "tapeutape 'tapeutape sampler'" },
 	{ "virtual keyboard", ladish_snewapp .. "jack-keyboard 'virtual keyboard'" },
 	{ "jamin mastering suite", ladish_snewapp .. "jamin 'jamin'" },
 	{ "--" },

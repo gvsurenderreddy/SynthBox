@@ -12,7 +12,6 @@ SynthBox TODO (before a real release)
     Csound/QuteCsound
     Tapeutape
     Guitarix and/or Rackarrack
-    Superlooper
 7 - Add CPU/MEM usage widgets to awesome panel
 8 - Add code to add an appropriate mixer to the menu and change jack 
     backend if the defaults won't do
