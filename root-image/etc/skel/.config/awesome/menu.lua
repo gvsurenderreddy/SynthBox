@@ -45,7 +45,7 @@ mymainmenu = awful.menu.new(
 	{ "carla synth/fx host", ladish_snewapp .. "carla 'carla host'" },
 	{ "jconvolver", ladish_snewapp .. "Jc_Gui 'jconvolver'" },
 	{ "hydrogen", ladish_snewapp .. "hydrogen 'hydrogen'" },
-	{ "sooperlooper", ladish_snewapp .. "sooperlooper 'sooperlooper'" },
+	{ "sooperlooper", ladish_snewapp .. "slgui 'sooperlooper'" },
 	{ "zita autotuner", ladish_snewapp .. "zita-at1 'zita autotuner'" },
 	{ "zita reverb", ladish_snewapp .. "zita-rev1 'zita reverb'" },
 	{ "traditional vu meter", ladish_snewapp .. "'jmeters -t vu system:capture_1 system:capture_2' 'vu meter'" },
