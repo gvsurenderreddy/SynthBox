@@ -15,8 +15,8 @@ do_setup_live_environment()
   su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
   
   #are we running in virtualbox? if so, use the dummy backend for jack.
-  #NOTE: This is really crude!  Surely there's a better way. (cat /proc/cpuinfo perhaps?)  
-  if [ "`ip route | grep 10.0.2.2`" != "" ]; then
+  #NOTE: This seems crude, surely there's a better way (what if messages are different in another kversion?).
+  if [ "`dmesg | grep 'virtualized system'`" != "" ]; then
     su -c "cp /home/$LIVE_USERNAME/.config/jack/vm-conf.xml /home/$LIVE_USERNAME/.config/jack/conf.xml" $LIVE_USERNAME
   fi
   #TODO detect firewire and other audio cards here, change Jack backend if necessary,
