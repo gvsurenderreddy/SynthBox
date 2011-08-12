@@ -60,11 +60,12 @@ layouts =
 
 -- tag settings
 shifty.config.tags = {
-    ["patch"] = { position = 2, exclusive = true, spawn = "claudia", init = true },
+    ["patch"] = { position = 1, exclusive = true, spawn = "gladish", init = true },
     ["apps"] = { exclusive = true },
     ["seq"] = { exclusive = true },
     ["daw"] = { exclusive = true },
     ["mixer"] = { exclusive = true },
+    ["loop"] = { exclusive = true },
     ["synth"] = { exclusive = true, layout = awful.layout.suit.floating },
     ["sampler"] = { exclusive = true },
     ["fx"] = { exclusive = true, layout = awful.layout.suit.floating },
@@ -82,6 +83,7 @@ shifty.config.apps = {
          { match = { "gladish", "claudia", "catia" } , tag = "patch" } ,
          { match = { "ladiconf" }, tag = "patch", float = true },
          { match = { "ardour_editor" } , tag = "daw" } ,
+         { match = { "slgui" }, tag = "loop" },
          { match = { "hydrogen" }, tag = "hydrogen" } ,
          { match = { "mixer" } , tag = "mixer" } ,
          { match = { "ardour" } , intrusive = true } ,
