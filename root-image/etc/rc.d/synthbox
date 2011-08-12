@@ -13,6 +13,14 @@ do_setup_live_environment()
   chown $LIVE_USERNAME /home/$LIVE_USERNAME
   su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVE_USERNAME/" $LIVE_USERNAME
   su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
+  
+  #are we running in virtualbox? if so, use the dummy backend for jack.
+  #NOTE: This is really crude!  Surely there's a better way. (cat /proc/cpuinfo perhaps?)  
+  if [ "`ip route | grep 10.0.2.2`" != "" ]; then
+    su -c "cp /home/$LIVE_USERNAME/.config/jack/vm-conf.xml /home/$LIVE_USERNAME/.config/jack/conf.xml" $LIVE_USERNAME
+  fi
+  #TODO detect firewire and other audio cards here, change Jack backend if necessary,
+  # and perhaps tweak the desktop menu to make an appropriate mixer available
 
   #Try to get a sensible volume set
   amixer sset 'Master Mono' 90% unmute &> /dev/null

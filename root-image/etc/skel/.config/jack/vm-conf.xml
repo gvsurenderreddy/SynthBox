@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+JACK settings, as persisted by D-Bus object.
+You probably don't want to edit this because
+it will be overwritten next time jackdbus saves.
+-->
+<!-- Fri May 20 14:49:10 2011 -->
+<jack>
+ <engine>
+  <option name="driver">alsa</option>
+  <option name="realtime">true</option>
+  <option name="temporary">false</option>
+  <option name="sync">true</option>
+ </engine>
+ <drivers>
+  <driver name="alsa">
+   <option name="period">2048</option>
+   <option name="midi-driver">seq</option>
+  </driver>
+  <driver name="dummy">
+  </driver>
+  <driver name="loopback">
+  </driver>
+  <driver name="net">
+  </driver>
+ </drivers>
+ <internals>
+  <internal name="audioadapter">
+  </internal>
+  <internal name="netadapter">
+  </internal>
+  <internal name="netmanager">
+  </internal>
+  <internal name="profiler">
+  </internal>
+ </internals>
+</jack>
