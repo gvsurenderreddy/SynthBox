@@ -59,8 +59,8 @@ linuxsampler
 #====================================
 alsa-tools
 alsa-tools-ice1712
-ladish
-laditools
+ladish-git
+laditools-git
 klaudia-git
 cadence-git
 a2jmidid
