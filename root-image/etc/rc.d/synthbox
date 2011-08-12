@@ -8,11 +8,8 @@ do_setup_live_environment()
   chmod 0440 /etc/sudoers 
   mkdir -p /home/$LIVE_USERNAME
   groupadd admin
-  useradd -u 1000 -g users -G storage,optical,audio,video,network,wheel,power,lp,admin -d /home/$LIVE_USERNAME $LIVE_USERNAME
+  useradd -u 1000 -g users -G users,storage,optical,audio,video,network,wheel,power,lp,admin -d /home/$LIVE_USERNAME -m $LIVE_USERNAME
   passwd -d $LIVE_USERNAME &> /dev/null
-  chown $LIVE_USERNAME /home/$LIVE_USERNAME
-  su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVE_USERNAME/" $LIVE_USERNAME
-  su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
   
   #are we running in virtualbox? if so, use the dummy backend for jack.
   #NOTE: This seems crude, surely there's a better way (what if messages are different in another kversion?).
