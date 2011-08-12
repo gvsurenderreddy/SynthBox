@@ -21,8 +21,6 @@ openssh
 rxvt-unicode
 htop
 dbus
-hal
-gconf
 xorg
 xorg-xinit
 xorg-drivers
