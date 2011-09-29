@@ -42,6 +42,7 @@ tango-icon-theme-extras
 ttf-liberation
 rsnapshot
 terminus-font
+vte
 
 #audio packages in extra or community
 jack2-dbus
