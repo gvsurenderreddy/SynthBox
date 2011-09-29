@@ -8,19 +8,20 @@ iso_version=$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
+out_dir=out
 verbose="y"
 
 script_path=$(readlink -f ${0%/*})
 
 # Base installation (root-image)
 make_basefs() {
-    mkarchiso ${verbose} -D "${install_dir}" -p "base" create "${work_dir}"
-    mkarchiso ${verbose} -D "${install_dir}" -p "memtest86+ syslinux mkinitcpio-nfs-utils nbd" create "${work_dir}"
+  mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "base" create
+  mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "memtest86+ syslinux mkinitcpio-nfs-utils nbd" create
 }
 
 # Additional packages (root-image)
 make_packages() {
-    mkarchiso ${verbose} -D "${install_dir}" -p "$(grep -v ^# ${script_path}/packages.list)" create "${work_dir}"
+        mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -p "$(grep -v ^# ${script_path}/packages.list)" create
 }
 
 # Customize installation (root-image)
@@ -113,13 +114,13 @@ make_aitab() {
 
 # Build all filesystem images specified in aitab (.fs .fs.sfs .sfs)
 make_prepare() {
-    mkarchiso ${verbose} -D "${install_dir}" prepare "${work_dir}"
+    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
 }
 
 # Build ISO
 make_iso() {
-    mkarchiso ${verbose} -D "${install_dir}" checksum "${work_dir}"
-    mkarchiso ${verbose} -D "${install_dir}" -L "${iso_label}" iso "${work_dir}" "${iso_name}-${iso_version}-${arch}.iso"
+    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" checksum
+    mkarchiso ${verbose} -w "${work_dir}" -D "${install_dir}" -L "${iso_label}" -o "${out_dir}" iso "${iso_name}-${iso_version}-${arch}.iso"
 }
 
 if [[ $verbose == "y" ]]; then
