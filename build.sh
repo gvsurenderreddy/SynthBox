@@ -51,6 +51,7 @@ make_setup_mkinitcpio() {
             cp /lib/initcpio/hooks/${_hook} ${work_dir}/root-image/lib/initcpio/hooks
             cp /lib/initcpio/install/${_hook} ${work_dir}/root-image/lib/initcpio/install
         done
+        cp /lib/initcpio/archiso_pxe_nbd ${work_dir}/root-image/lib/initcpio
         : > ${work_dir}/build.${FUNCNAME}
    fi
 }
@@ -100,6 +101,7 @@ make_isolinux() {
         mkdir -p ${work_dir}/iso/isolinux
         sed "s|%INSTALL_DIR%|${install_dir}|g" ${script_path}/isolinux/isolinux.cfg > ${work_dir}/iso/isolinux/isolinux.cfg
         cp ${work_dir}/root-image/usr/lib/syslinux/isolinux.bin ${work_dir}/iso/isolinux/
+        cp ${work_dir}/root-image/usr/lib/syslinux/isohdpfx.bin ${work_dir}/iso/isolinux/
         : > ${work_dir}/build.${FUNCNAME}
     fi
 }
