@@ -7,10 +7,10 @@ iso_label="ARCH_$(date +%Y%m)"
 version=$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
+work_dir=work
 verbose="y"
 
 script_path=$(readlink -f ${0%/*})
-work_dir=${script_path}/work
 
 # Base installation (root-image)
 make_basefs() {
