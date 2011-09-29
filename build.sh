@@ -7,8 +7,10 @@ iso_label="ARCH_$(date +%Y%m)"
 version=$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
-work_dir=work
 verbose="y"
+
+script_path=$(readlink -f ${0%/*})
+work_dir=${script_path}/work
 
 # Base installation (root-image)
 make_basefs() {
@@ -18,13 +20,13 @@ make_basefs() {
 
 # Additional packages (root-image)
 make_packages() {
-    mkarchiso ${verbose} -D "${install_dir}" -p "$(grep -v ^# packages.list)" create "${work_dir}"
+    mkarchiso ${verbose} -D "${install_dir}" -p "$(grep -v ^# ${script_path}/packages.list)" create "${work_dir}"
 }
 
 # Customize installation (root-image)
 make_customize_root_image() {
     if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
-        cp -af root-image ${work_dir}
+        cp -af ${script_path}/root-image ${work_dir}
         chown -R root:root ${work_dir}/root-image/etc
         chmod -R go-w ${work_dir}/root-image/etc
         chmod a+x ${work_dir}/root-image/etc/rc.d/*
@@ -59,7 +61,7 @@ make_boot() {
         local _dst_boot=${work_dir}/iso/${install_dir}/boot
         mkdir -p ${_dst_boot}/${arch}
         mkinitcpio \
-            -c ./mkinitcpio.conf \
+            -c ${script_path}/mkinitcpio.conf \
             -b ${_src} \
             -k /boot/vmlinuz-linux \
             -g ${_dst_boot}/${arch}/archiso.img
@@ -78,8 +80,8 @@ make_syslinux() {
         mkdir -p ${_dst_syslinux}
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
             s|%INSTALL_DIR%|${install_dir}|g;
-            s|%ARCH%|${arch}|g" syslinux/syslinux.cfg > ${_dst_syslinux}/syslinux.cfg
-        cp syslinux/splash.png ${_dst_syslinux}
+            s|%ARCH%|${arch}|g" ${script_path}/syslinux/syslinux.cfg > ${_dst_syslinux}/syslinux.cfg
+        cp ${script_path}/syslinux/splash.png ${_dst_syslinux}
         cp ${_src_syslinux}/*.c32 ${_dst_syslinux}
         cp ${_src_syslinux}/*.com ${_dst_syslinux}
         cp ${_src_syslinux}/*.0 ${_dst_syslinux}
@@ -95,7 +97,7 @@ make_syslinux() {
 make_isolinux() {
     if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
         mkdir -p ${work_dir}/iso/isolinux
-        sed "s|%INSTALL_DIR%|${install_dir}|g" isolinux/isolinux.cfg > ${work_dir}/iso/isolinux/isolinux.cfg
+        sed "s|%INSTALL_DIR%|${install_dir}|g" ${script_path}/isolinux/isolinux.cfg > ${work_dir}/iso/isolinux/isolinux.cfg
         cp ${work_dir}/root-image/usr/lib/syslinux/isolinux.bin ${work_dir}/iso/isolinux/
         : > ${work_dir}/build.${FUNCNAME}
     fi
@@ -104,7 +106,7 @@ make_isolinux() {
 # Process aitab
 make_aitab() {
     if [[ ! -e ${work_dir}/build.${FUNCNAME} ]]; then
-        sed "s|%ARCH%|${arch}|g" aitab > ${work_dir}/iso/${install_dir}/aitab
+        sed "s|%ARCH%|${arch}|g" ${script_path}/aitab > ${work_dir}/iso/${install_dir}/aitab
         : > ${work_dir}/build.${FUNCNAME}
     fi
 }
