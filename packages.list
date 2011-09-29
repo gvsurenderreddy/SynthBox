@@ -14,7 +14,7 @@ dnsutils
 file
 fuse
 nano
-gdb
+#gdb
 
 #now more desktop-related packages
 openssh
@@ -51,7 +51,9 @@ moc
 alsa-utils
 alsa-firmware
 celt-0.7
-linuxsampler
+#linuxsampler
+fluidsynth
+qsynth
 
 #====================================
 #ArchAudio and ObsoleteAudio Packages
@@ -71,7 +73,7 @@ ardour2-svn
 calf-git
 jamin
 gtk-clearlooks-zenburn
-lash
+#lash
 lv2core
 murrine-themes-collection
 non-sequencer-git
@@ -94,7 +96,7 @@ ams
 yoshimi
 jack-keyboard
 minicomputer
-qsampler
-gigedit
+#qsampler
+#gigedit
 sooperlooper
-tapeutape
+#tapeutape
