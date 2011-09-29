@@ -2,7 +2,7 @@
 
 set -e -u
 
-name=synthbox
+iso_name=synthbox
 iso_label="ARCH_$(date +%Y%m)"
 version=$(date +%Y.%m.%d)
 install_dir=arch
@@ -119,7 +119,7 @@ make_prepare() {
 # Build ISO
 make_iso() {
     mkarchiso ${verbose} -D "${install_dir}" checksum "${work_dir}"
-    mkarchiso ${verbose} -D "${install_dir}" -L "${iso_label}" iso "${work_dir}" "${name}-${version}-${arch}.iso"
+    mkarchiso ${verbose} -D "${install_dir}" -L "${iso_label}" iso "${work_dir}" "${iso_name}-${version}-${arch}.iso"
 }
 
 if [[ $verbose == "y" ]]; then
