@@ -16,7 +16,7 @@ do_setup_live_environment()
   #Make a symlink to a backed-up synthbox home dir if it exists
   if [ -d "/media" ]; then
     find /media -maxdepth 2 -type d -name "$USB_CONFIG_DIR_NAME" -exec ln -s {} "/home/$LIVE_USERNAME/$USB_CONFIG_DIR_NAME" \; 
-    if [ -L "$HOME/$USB_CONFIG_DIR_NAME" ]; then
+    if [ -L "/home/$LIVE_USERNAME/$USB_CONFIG_DIR_NAME" ]; then
       usermod -d "/home/$LIVE_USERNAME/$USB_CONFIG_DIR_NAME" $LIVE_USERNAME
     fi
   fi
