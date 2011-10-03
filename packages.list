@@ -43,6 +43,8 @@ ttf-liberation
 rsnapshot
 terminus-font
 vte
+#calf requires gconf but doesn't declare it as dependency
+gconf
 
 #audio packages in extra or community
 jack2-dbus
