@@ -90,7 +90,7 @@ shifty.config.apps = {
          { match = { "seq24", "non-sequencer" }, tag = "seq" },
          { match = { "calf", "carla" }, tag = "host", float = true },
          { match = { "zynjacku", "yoshimi", "Yoshimi", "bristol", "brighton", "minicomputer" }, tag = "synth", float = true },
-         { match = { "qsampler" }, tag = "sampler" },
+         { match = { "qsampler", "qsynth" }, tag = "sampler" },
          { match = { "lv2rack", "Jc_Gui", "zita" }, tag = "fx" },
          { match = { "jmeters", "jkmeter", "jaaa", "japa" }, tag = "meters" },
          { match = { "Jack-keyboard" }, tag = "keyboard" },
