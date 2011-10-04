@@ -47,7 +47,6 @@ vte
 gconf
 
 #audio packages in extra or community
-jack2-dbus
 hydrogen
 moc
 alsa-utils
@@ -56,50 +55,62 @@ celt-0.7
 #linuxsampler
 fluidsynth
 qsynth
+lv2core
 
 #====================================
-#ArchAudio and ObsoleteAudio Packages
+# KXStudio Packages
 #====================================
-alsa-tools
-alsa-tools-ice1712
-ladish-git
-laditools-git
-klaudia-git
-cadence-git
-a2jmidid
-rtirq
-awesome
+kxstudio-free/jack2-dbus-ladish
+kxstudio-free/a2jmidid
+kxstudio-free/klaudia
+kxstudio-free/cadence-git
+kxstudio-free/festige
+kxstudio-free/bristol
+kxstudio-free/seq24
+
+
+#====================================
+#ObsoleteAudio Packages
+#====================================
+obsoleteaudio/rtirq
+obsoleteaudio/alsa-tools
+obsoleteaudio/alsa-tools-ice1712
+obsoleteaudio/ladish-git
+obsoleteaudio/laditools-git
+obsoleteaudio/calf-git
+obsoleteaudio/jamin
+obsoleteaudio/non-sequencer-git
+obsoleteaudio/sooperlooper
+obsoleteaudio/minicomputer
+obsoleteaudio/yoshimi
+obsoleteaudio/jack-keyboard
+obsoleteaudio/zynjacku
+obsoleteaudio/jconvolver
+obsoleteaudio/jcgui
+obsoleteaudio/zita-at1
+obsoleteaudio/zita-rev1
+obsoleteaudio/jaaa
+obsoleteaudio/japa
+obsoleteaudio/aeolus
+obsoleteaudio/jkmeter
+obsoleteaudio/jmeters
+obsoleteaudio/yass
+obsoleteaudio/ams
+
+# ObsoleteNonAudio Packages
+obsoleteaudio/awesome
+obsoleteaudio/murrine-themes-collection
+obsoleteaudio/gtk-clearlooks-zenburn
+obsoleteaudio/tintwizard
+
+#====================================
+#Get these from ArchAudio or
+#wherever's convenient
+#====================================
 ladspa-plugins
 lv2-plugins
-ardour2-svn
-calf-git
-jamin
-gtk-clearlooks-zenburn
-#lash
-lv2core
-murrine-themes-collection
-non-sequencer-git
-seq24
-slv2-svn
-bristol
-tintwizard
-zynjacku
-jconvolver
-jcgui
-zita-at1
-zita-rev1
-jaaa
-japa
-aeolus
-jkmeter
-jmeters
-yass
-ams
-yoshimi
-jack-keyboard
-minicomputer
+#ardour2-svn
 #qsampler
 #gigedit
-sooperlooper
 #tapeutape
 pd-extended
