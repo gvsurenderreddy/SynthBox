@@ -84,7 +84,7 @@ mymainmenu = awful.menu.new(
 	{ "jconvolver", ladish_snewapp .. "Jc_Gui 'jconvolver' 0" },
 	{ "hydrogen", ladish_snewapp .. "hydrogen 'hydrogen' lash" },
 	{ "sooperlooper", ladish_snewapp .. "slgui 'sooperlooper' 0" },
-	{ "puredata extended", ladish_snewapp .. "pdextended 'puredata extended' " },
+	{ "puredata extended", ladish_snewapp .. "pdextended 'puredata extended' 0" },
 	{ "zita autotuner", ladish_snewapp .. "zita-at1 'zita autotuner' 0" },
 	{ "zita reverb", ladish_snewapp .. "zita-rev1 'zita reverb' 0" },
 	{ "traditional vu meter", ladish_snewapp .. "'jmeters -t vu system:capture_1 system:capture_2' 'vu meter' 0" },
