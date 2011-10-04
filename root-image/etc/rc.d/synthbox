@@ -12,6 +12,14 @@ do_setup_live_environment()
   chown $LIVE_USERNAME /home/$LIVE_USERNAME
   su -c "cp -r /etc/skel/.[a-zA-Z0-9]* /home/$LIVE_USERNAME/" $LIVE_USERNAME
   su -c "cp -r /etc/skel/* /home/$LIVE_USERNAME/" $LIVE_USERNAME
+
+  #are we running in virtualbox? if so, use the dummy backend for jack.
+  #NOTE: This seems crude, surely there's a better way (what if messages are different in another kversion?).
+  if [ "`dmesg | grep 'virtualized system'`" != "" ]; then
+    su -c "cp /home/$LIVE_USERNAME/.config/jack/vm-conf.xml /home/$LIVE_USERNAME/.config/jack/conf.xml" $LIVE_USERNAME
+  fi
+  #TODO detect firewire and other audio cards here, change Jack backend if necessary,
+  # and perhaps tweak the desktop menu to make an appropriate mixer available
   
   #Make a symlink to a backed-up synthbox home dir if it exists
   if [ -d "/media" ]; then
@@ -20,14 +28,6 @@ do_setup_live_environment()
       usermod -d "/home/$LIVE_USERNAME/$USB_CONFIG_DIR_NAME" $LIVE_USERNAME
     fi
   fi
-    
-  #are we running in virtualbox? if so, use the dummy backend for jack.
-  #NOTE: This seems crude, surely there's a better way (what if messages are different in another kversion?).
-  if [ "`dmesg | grep 'virtualized system'`" != "" ]; then
-    su -c "cp /home/$LIVE_USERNAME/.config/jack/vm-conf.xml /home/$LIVE_USERNAME/.config/jack/conf.xml" $LIVE_USERNAME
-  fi
-  #TODO detect firewire and other audio cards here, change Jack backend if necessary,
-  # and perhaps tweak the desktop menu to make an appropriate mixer available
 
   #Try to get a sensible volume set
   amixer sset 'Master Mono' 90% unmute &> /dev/null
