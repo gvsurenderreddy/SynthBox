@@ -81,6 +81,7 @@ mymainmenu = awful.menu.new(
 	{ "lv2 fx host", ladish_snewapp .. "lv2rack 'lv2 fx host' 0" },
 	{ "calf synth/fx host", ladish_snewapp .. "calfjackhost 'calf host' lash" },
 	{ "carla synth/fx host", ladish_snewapp .. "carla 'carla host' 0" },
+	{ "festige vst host", ladish_snewapp .. "festige 'festige host' 1" },
 	{ "jconvolver", ladish_snewapp .. "Jc_Gui 'jconvolver' 0" },
 	{ "hydrogen", ladish_snewapp .. "hydrogen 'hydrogen' lash" },
 	{ "sooperlooper", ladish_snewapp .. "slgui 'sooperlooper' 0" },

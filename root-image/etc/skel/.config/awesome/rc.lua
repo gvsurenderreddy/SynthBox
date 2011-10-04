@@ -88,7 +88,8 @@ shifty.config.apps = {
          { match = { "mixer" } , tag = "mixer" } ,
          { match = { "ardour" } , intrusive = true } ,
          { match = { "seq24", "non-sequencer" }, tag = "seq" },
-         { match = { "calf", "carla" }, tag = "host", float = true },
+         { match = { "pd", "Pd-extended" }, tag = "pd" },
+         { match = { "calf", "carla", "festige" }, tag = "host", float = true },
          { match = { "zynjacku", "yoshimi", "Yoshimi", "bristol", "brighton", "minicomputer" }, tag = "synth", float = true },
          { match = { "qsampler", "qsynth" }, tag = "sampler" },
          { match = { "lv2rack", "Jc_Gui", "zita" }, tag = "fx" },
@@ -396,6 +397,19 @@ client.add_signal("manage", function (c, startup)
         if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
             and awful.client.focus.filter(c) then
             client.focus = c
+        end
+    end)
+    
+    --Rearrange a client when going to floating
+    c:add_signal("property::floating", function(c)
+        local layout  = awful.layout.getname(awful.layout.get(c.screen))
+        
+        if awful.client.floating.get(c) or layout == "floating" then
+            if not c.size_hints.user_position and not c.size_hints.program_position then
+                awful.placement.centered(c)
+                awful.placement.no_overlap(c)
+                awful.placement.no_offscreen(c)
+            end
         end
     end)
 
