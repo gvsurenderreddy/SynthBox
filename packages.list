@@ -52,7 +52,8 @@ moc
 alsa-utils
 alsa-firmware
 celt-0.7
-#linuxsampler
+linuxsampler
+gigedit
 fluidsynth
 qsynth
 lv2core
@@ -71,6 +72,10 @@ kxstudio-free/seq24
 
 #====================================
 #ObsoleteAudio Packages
+#IMPORTANT: Since these packages feed
+#the repo-rebuild script, they should
+#be listed in the order they are to
+#be built.
 #====================================
 obsoleteaudio/rtirq
 obsoleteaudio/alsa-tools
@@ -96,6 +101,8 @@ obsoleteaudio/jkmeter
 obsoleteaudio/jmeters
 obsoleteaudio/yass
 obsoleteaudio/ams
+obsoleteaudio/liblscp
+obsoleteaudio/qsampler
 
 # ObsoleteNonAudio Packages
 obsoleteaudio/awesome
@@ -110,7 +117,5 @@ obsoleteaudio/tintwizard
 ladspa-plugins
 lv2-plugins
 #ardour2-svn
-#qsampler
-#gigedit
 #tapeutape
 pd-extended
