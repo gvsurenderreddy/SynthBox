@@ -1,3 +1,12 @@
+
+** WARNING **
+This repo is a year out of date!  As its based on Arch, 
+the upstream changes very quickly.  This means it almost certainly 
+won't build anymore.  I haven't had time to maintain it.  At this
+point it would probably be better to start mostly from scratch
+anyway.
+*************
+
 What is SynthBox?
 
 SynthBox is an ArchLinux-based audio production environment on a 
